@@ -6,10 +6,12 @@ Data: 05/11/2025
 Github: https://github.com/danilodevsys
 """
 
-import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 from importacao import carregar_dados
 
-def analisar_faturamento():
+
+def analisar_faturamento(df_completo):
     print("="*50)
     print("1. Análise de Faturamento")
     print("="*50)
@@ -21,6 +23,15 @@ def analisar_faturamento():
     faturamento_total = df_completo['Preço'].sum()
     print(f"\nFaturamento Total (todas as lojas): R$ {faturamento_total:,.2f}\n")
 
+    plt.figure(figsize=(10, 6))
+    sns.barplot(data=faturamento_por_loja, x='loja', y='Preço', palette='viridis', hue='loja', dodge=False)
+    plt.title('Faturamento por Loja')
+    plt.xlabel('Loja')
+    plt.ylabel('Faturamento (R$)')
+    plt.grid(axis='y', linestyle='--')
+    plt.legend([],[], frameon=False)
+
 if __name__ == "__main__":
     df_completo = carregar_dados()
-    analisar_faturamento()
+    analisar_faturamento(df_completo)
+    plt.show()

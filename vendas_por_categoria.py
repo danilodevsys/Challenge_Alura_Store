@@ -6,11 +6,12 @@ Data: 05/11/2025
 Github: https://github.com/danilodevsys
 """
 
+import matplotlib.pyplot as plt
+import seaborn as sns
 from importacao import carregar_dados
 
-def analisar_vendas_por_categoria():
-    df_completo = carregar_dados()
 
+def analisar_vendas_por_categoria(df_completo):
     print("="*50)
     print("2. Análise de Vendas por Categoria")
     print("="*50)
@@ -20,5 +21,15 @@ def analisar_vendas_por_categoria():
     print("\nNúmero de Vendas por Categoria:")
     print(f"{vendas_categoria.to_string()}\n")
 
+    plt.figure(figsize=(12, 7))
+    sns.barplot(data=vendas_categoria, x='Numero de Vendas', y='Categoria', palette='magma', hue='Categoria', dodge=False)
+    plt.title('Número de Vendas por Categoria')
+    plt.xlabel('Número de Vendas')
+    plt.ylabel('Categoria')
+    plt.grid(axis='x', linestyle='--')
+    plt.legend([],[], frameon=False)
+
 if __name__ == "__main__":
-    analisar_vendas_por_categoria()
+    df_completo = carregar_dados()
+    analisar_vendas_por_categoria(df_completo)
+    plt.show()

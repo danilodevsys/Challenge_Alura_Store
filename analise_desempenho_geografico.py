@@ -16,13 +16,12 @@ def analisar_desempenho_geografico(df_completo):
     print("="*50)
     print("\nGerando gráfico de dispersão para visualizar a concentração de vendas...")
 
-    plt.figure(figsize=(10, 8))
-    sns.scatterplot(data=df_completo, x='lon', y='lat', hue='loja', palette='tab10', s=10, alpha=0.5)
-    plt.title('Distribuição Geográfica das Vendas por Loja')
-    plt.xlabel('Longitude')
-    plt.ylabel('Latitude')
-    plt.legend(title='Loja')
-    plt.grid(True)
+    g = sns.FacetGrid(df_completo, col="loja", col_wrap=2, height=5, aspect=1.2)
+    g.map(sns.scatterplot, "lon", "lat", alpha=0.6, s=20)
+    g.set_titles("Loja: {col_name}", size=14)
+    g.set_axis_labels("Longitude", "Latitude")
+    g.fig.suptitle('Distribuição Geográfica das Vendas por Loja', y=1.02, fontsize=16)
+    g.tight_layout(w_pad=1)
 
 if __name__ == "__main__":
     df_completo = carregar_dados()
