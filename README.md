@@ -1,18 +1,43 @@
-# Análise de Desempenho de Lojas - Challenge Data Science
+![Oracle Next Education](Oracle_Next_Education.png)
 
-Este projeto analisa dados de vendas de quatro lojas para fornecer uma recomendação fundamentada sobre qual unidade de negócio apresenta o menor desempenho e deveria ser considerada para venda.
+![Status](https://img.shields.io/badge/Status-Concluído-yellow)
+![Python](https://img.shields.io/badge/Python-3.14-blue)
+![Data Science](https://img.shields.io/badge/Data_Science-G9-green)
+![Author](https://img.shields.io/badge/Autor-Danilo%20C.%20Silva-magenta)
+[![Github](https://img.shields.io/badge/Github-danilodevsys-red)](https://github.com/danilodevsys)
+
+---
+
+# 📊 Análise de Desempenho de Lojas — *Challenge Data Science*
+
+Este projeto tem como objetivo analisar dados de vendas de **quatro lojas fictícias da rede Alura Store**, fornecendo uma recomendação fundamentada sobre **qual unidade apresenta o menor desempenho** e, portanto, **deveria ser considerada para venda**.
+
+---
 
 ## 🎯 Objetivo
 
-O objetivo principal é auxiliar o "Senhor João", proprietário das lojas, a tomar uma decisão estratégica baseada em dados. A análise consolida informações de faturamento, satisfação do cliente e custos operacionais (frete) para identificar a loja com os maiores desafios e menor potencial de crescimento.
+Auxiliar o **Senhor João**, proprietário da rede, na **tomada de decisão estratégica baseada em dados**.  
+A análise integra informações de:
 
-## 📂 Estrutura do Projeto
+- 💰 **Faturamento**
+- ⭐ **Satisfação do cliente**
+- 🚚 **Custos operacionais (frete)**
 
-O código está organizado em módulos para garantir clareza e manutenibilidade:
+Com base nesses indicadores, o projeto identifica **a loja com os maiores desafios e menor potencial de crescimento**.
 
--   `importacao.py`: Centraliza o carregamento e a unificação dos dados de todas as lojas a partir de fontes online.
--   `analise_*.py`: Scripts individuais para análises específicas (faturamento, frete, avaliações, etc.), cada um capaz de gerar um relatório e um gráfico sobre sua respectiva métrica.
--   `desafio_concluido.py`: **Este é o script principal**. Ele orquestra toda a análise, gera um relatório de texto consolidado no terminal e exibe um dashboard visual com a recomendação final.
+---
+
+## 🧩 Estrutura do Projeto
+
+O código foi organizado em **módulos independentes** para garantir clareza, escalabilidade e manutenção simples:
+
+| Arquivo | Função |
+|----------|--------|
+| `importacao.py` | Centraliza o carregamento e a unificação dos dados de todas as lojas a partir de fontes online. |
+| `analise_*.py` | Scripts individuais para análises específicas — faturamento, frete, avaliações, etc. Cada módulo gera um relatório e um gráfico. |
+| `desafio_concluido.py` | **Script principal** que orquestra toda a análise, gera o relatório consolidado no terminal e exibe o dashboard final. |
+
+---
 
 ## 🛠️ Como Executar o Projeto
 
